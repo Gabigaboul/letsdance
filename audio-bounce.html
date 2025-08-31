@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio-bounce</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="sketch-bounce.js" defer></script>
+  
+  <link rel="stylesheet" href="styles-bounce.css">
+
+</head>
+<body>
+  <!-- Le canevas où le mot sera dessiné -->
+  <div id="wordCanvas"></div>
+
+  <!-- Conteneur pour le champ de texte et le bouton -->
+  <div id="controls-container">
+
+    <h1 id="menuTitle">Let's dance XP</h1>
+
+
+    <div class="separator">--------------------------------------
+    </div>
+    <!-- Champ de texte pour entrer le mot -->
+    <input type="text" id="wordInput" placeholder="Entrez votre mot">
+    <!-- Bouton pour actualiser le mot -->
+    <button onclick="updateWord()">Actualiser</button>
+
+<!-- random word -->
+    <button onclick="chargerMotAleatoire()">Mot aléatoire</button>
+
+     <label for="gravitySlider">gravity :</label>
+    <input type="range" id="gravitySlider" min="-0.2" max="0.5" step="0.01" value="0.01" onchange="updateGravity()">
+    
+    <!-- Slider pour la déformation verticale -->
+    <label for="bounceSlider">Bounce :</label>
+    <input type="range" id="bounceSlider" min="0.4" max="1" step="0.1" value="-0.6" onchange="updateBounce()">    <!-- Slider pour l'inclinaison (skew) -->
+    
+
+        <!-- Slider pour la couleur  -->
+    <div class="separator">--------------------------------------
+    </div>
+  
+    <label for="backgroundRedSlider">Rouge :</label>
+    <input type="range" id="backgroundRedSlider" min="0" max="255" value="255" onchange="updateBackgroundColor()">
+    <br>
+    <label for="backgroundGreenSlider">Vert :</label>
+    <input type="range" id="backgroundGreenSlider" min="0" max="255" value="255" onchange="updateBackgroundColor()">
+    <br>
+    <label for="backgroundBlueSlider">Bleu :</label>
+    <input type="range" id="backgroundBlueSlider" min="0" max="255" value="255" onchange="updateBackgroundColor()">
+    
+    <label for="backgroundAlphaSlider">Transparence :</label>
+    <input type="range" id="backgroundAlphaSlider" min="0" max="25" value="10" onchange="updateBackgroundColorAlpha()">
+    
+    <div class="separator">--------------------------------------
+    </div>
+ <!-- Liste blend mode -->
+        <label for="blendModeSelect">Mode de Mélange :</label>
+        <select id="blendModeSelect" onchange="updateBlendMode()">
+        <option value="BLEND">Normal</option>
+        <option value="ADD">Addition</option>
+        <option value="DARKEST">Darkest</option>
+        <option value="LIGHTEST">Lightest</option>
+        <option value="DIFFERENCE">Difference</option>
+        <option value="MULTIPLY">Multiply</option>
+        <option value="EXCLUSION">Exclusion</option>
+        <option value="SCREEN">Screen</option>
+        <option value="OVERLAY">Overlay</option>
+        <option value="HARD_LIGHT">Hard Light</option>
+        <option value="SOFT_LIGHT">Soft Light</option>
+        <option value="BURN">Burn</option>
+
+      </select>
+
+      <div class="separator"></div>
+
+      <button id="startButton" onclick="startAnimation()">Start</button>
+      <button id="stopButton" onclick="stopAnimation()">Stop</button>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+  margin: 0; /* Supprimer les marges par défaut du body */
+  overflow: hidden; /* Empêcher les éléments de dépasser la fenêtre */
+}/* Style pour le conteneur des contrôles */
+
+
+#controls-container {
+  position: absolute;
+  top: 20px; /* Marge de 20px à partir du haut */
+  left: 20px; /* Marge de 20px à partir de la gauche */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligner les éléments à gauche */
+  padding: 10px;
+  border: 2px solid black; /* Bordure solide noire de 2px */
+  background-color: white; /* Fond blanc pour la visibilité */
+}
+
+/* Style pour le canevas */
+
+
+#defaultCanvas0 {
+  border: 1px solid black; /* Bordure solide noire de 10px */
+  box-sizing: border-box; /* Inclure la bordure dans les dimensions */
+  padding: 0;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+#menuTitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: 20px; /* Ajustez la taille de la police ici */
+}
+
+.separator {
+  border-top: 1px;
+  margin: 10px 0;
+  border-color: black;
+  
+}
+
+.button-active {
+  margin-top: 10px;
+  background-color: black; /* Couleur de fond pour le bouton actif */
+  color: white; /* Couleur du texte pour le bouton actif */
+}
+
+.button-inactive {
+  margin-top: 10px;
+  background-color: red; /* Couleur de fond pour le bouton inactif */
+  color: white; /* Couleur du texte pour le bouton inactif */
+}
